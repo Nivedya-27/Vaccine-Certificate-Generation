@@ -1,0 +1,2 @@
+# Vaccine-Certificate-Generation
+Create a database with patient details, list of vaccines (from immunization schedule by the IAP), and record of all vaccinations. The table with the list of vaccinations was prepared from a template.csv file an example of which has been uploaded. The GUI built using tkinter enables physicians with access as root user to enter new patient or record a vaccination event, to view list of patients, vaccines or vaccine records, and to generate vaccination certificate.
