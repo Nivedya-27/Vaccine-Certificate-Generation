@@ -134,6 +134,10 @@ def submit_vaccine_record():
 	global patient_id
 	global date_of_administration
 	global connection
+	if(not (len(vaccine_id.get()))):
+		tk.messagebox.showwarning("Empty vaccine ID","Enter vaccine ID")
+	if(not (len(patient_id.get()))):
+		tk.messagebox.showwarning("Empty Patient ID","Enter patient ID")
 	insert_record="""INSERT INTO vaccine_record (patient_id,vaccine_id,date_of_administration) VALUES(%s,%s,%s)"""
 	with connection.cursor() as cursor:
 		cursor.executemany(insert_record,[(int(patient_id.get()),int(vaccine_id.get()),date_of_administration)])
@@ -157,6 +161,8 @@ def generate_certif():
 def make_certif():
 	global connection
 	global pid
+	if(not len(pid.get())):
+		tk.messagebox.showwarning("Empty Patient ID","Enter Patient ID")
 	patient_id=int(pid.get())
 	select_records="""
 	SELECT vaccine_list.name,vaccine_list.optional_brand,date_of_administration 
